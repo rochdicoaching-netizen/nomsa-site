@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary — Deep Teal: trust, emotional safety, healing */
+  --color-teal-900: #0a3536;
+  --color-teal-800: #0d4344;
+  --color-teal-700: #0f5257;
+  --color-teal-600: #146268;
+  --color-teal-500: #1d7980;
+  --color-teal-300: #6f9a98;
+  --color-teal-100: #dfeeed;
+  --color-teal-50: #f1f8f7;
+
+  /* Secondary — Soft Sage: renewal, growth, balance */
+  --color-sage-700: #5f7a5c;
+  --color-sage-600: #7c9a79;
+  --color-sage-500: #93b18f;
+  --color-sage-200: #cfe0cb;
+  --color-sage-100: #e9f1e6;
+  --color-sage-50: #f5f8f3;
+
+  /* Accent — Warm Gold: hope, excellence, transformation */
+  --color-gold-700: #82601f;
+  --color-gold-600: #b98a2d;
+  --color-gold-500: #cb9d42;
+  --color-gold-400: #d9ae5c;
+  --color-gold-300: #e8c883;
+  --color-gold-200: #f0dcb2;
+  --color-gold-100: #f8ecd2;
+  --color-gold-50: #fbf5e8;
+
+  /* Supporting neutrals */
+  --color-white: #ffffff;
+  --color-canvas: #faf8f4;
+  --color-beige: #f1ebe0;
+  --color-grey-400: #a9a49a;
+  --color-grey-200: #e7e4dd;
+  --color-grey-100: #f0ede6;
+  --color-charcoal: #262624;
+
+  --font-heading: var(--font-display), ui-serif, Georgia, serif;
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-fade-up: fade-up 0.6s ease-out both;
+  --animate-fade-in: fade-in 0.6s ease-out both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+body {
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3.5rem;
+  z-index: 100;
+  background: var(--color-teal-800);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+::selection {
+  background: var(--color-gold-100);
+  color: var(--color-teal-900);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
